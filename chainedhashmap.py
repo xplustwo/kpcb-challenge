@@ -20,6 +20,16 @@ class entry:
         self.key = key
         self.next = None
 
+class table:
+    def __init__(self):
+        self.entries = []
+
+    def addEntry(self, newEntry):
+        self.entries.append(newEntry)
+    
+    def removeEntry(self, Entry):
+        self.entries.remove(Entry)
+
 #Creates the class for the full table - contains methods for important functions
 class ChainedHashMap:
     def __init__(self, size):
