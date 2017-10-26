@@ -106,10 +106,10 @@ class ChainedHashMap:
         for i in range(0, self.size):
             temp = self.table[i]
             if temp is not None:
-                print "Key: ", temp.key
-                print temp.value
+                print("Key: ", temp.key)
+                print(temp.value)
                 if temp.next is not None:
                     temp = temp.next
                     while temp is not None:
-                        print str(temp.value) + ""
+                        print(str(temp.value) + "")
                         temp = temp.next
