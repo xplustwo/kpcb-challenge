@@ -1,0 +1,40 @@
+Hash table with chaining
+
+- A hash table with chaining is a hash table such that each entry in a bucket is a linked list. Any element that hashes to the same location and key as an existing element, must be placed at the end of the linked list. For example: 
+
+[ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] <-- Hash table, currently empty
+
+[ ] [3] [ ] [ ] [ ] [ ] [7] [ ] [ ] [1] <-- Hash table, some values inserted
+
+
+[ ] [3] [ ] [ ] [ ] [ ] [7] [ ] [ ] [1] <-- Collision happens with index 1 at value 3 when we try to insert 13
+     X
+    [13]
+
+[ ] [3] [ ] [ ] [ ] [ ] [7] [ ] [ ] [1] <-- After collision is resolved
+     V
+    [13]
+
+[ ] [3] [ ] [ ] [ ] [ ] [7] [ ] [ ] [1] <-- Collision at index 1, value 3 at insert 33
+     V
+    [13]
+     X
+    [33]
+
+[ ] [3] [ ] [ ] [ ] [ ] [7] [ ] [ ] [1] <-- Collision is resolved
+     V
+    [13]
+     V
+    [33]
+
+All values must be successfully inserted into the hash table, and old values cannot be overwritten. 
+
+Method prototypes:
+* search (key, value): take a key and value, and return whether this value exists in the hash table (can also be on a chain).
+
+* insert(key, value): takes a key and a value, and inserts an element into the hash table. If an element exists already, place it on chain.
+
+* delete(key, value): find and delete a given (key, value) pair. A value you’re searching for can be on a chain as well.
+
+Don’t worry about resizing the hash table, or the load factor.
+
