@@ -64,6 +64,8 @@ class ChainedHashMap:
     #returns the first value at a given key
     #To search through values at a given key, use while() loop
     def get(self, key):
+        if key is None:
+            return None
         index = hash(key) % self.size
         if index < 0: return None
         if self.table[index] is None:
